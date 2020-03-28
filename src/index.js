@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { Suspense } from "react";
+import ReactDOM from "react-dom";
+import { Canvas, Dom } from "react-three-fiber";
+import "./index.css";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import Controls from "./components/Controls";
+import Scene from './components/Scene';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+function App() {
+  return (
+      <Canvas camera={{ zoom: 40, position: [0, 0, 500] }}>
+        <Suspense
+          fallback={<Dom center className="loading" children="Loading..." />}
+        >
+          <Controls />
+          <Scene />
+        </Suspense>
+      </Canvas>
+  );
+}
+
+const root = document.getElementById("root");
+ReactDOM.render(<App />, root);
