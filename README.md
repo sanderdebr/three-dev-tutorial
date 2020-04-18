@@ -1,6 +1,6 @@
 # 3D procedural landscape with React and three.js
 
-Basic three.js with react-three-fiber scene for my tutorial on dev.to. 
+Basic three.js with react-three-fiber scene for [my tutorial on dev.to.](https://dev.to/sanderdebr/let-s-build-3d-procedural-landscape-with-react-and-three-js-47a0)
 
 ```
 src
